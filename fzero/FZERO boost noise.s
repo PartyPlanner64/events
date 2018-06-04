@@ -1,0 +1,13 @@
+; NAME: FZERO boost noise
+; GAMES: MP3_USA
+; EXECUTION: Direct
+
+ADDIU SP SP -4
+SW RA 0(SP)
+
+JAL PlaySound
+ADDIU A0 R0 0x3B3 ; soaring sound
+
+LW RA 0x000(SP)
+JR RA
+ADDIU SP SP 4
