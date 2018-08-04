@@ -10,7 +10,7 @@ JAL guRandom ; Generates random 32-bit int
 NOP
 ; Random int was returned in V0
 
-; 50% chance of either outcome
+; 50% chance of either outcome (25%?)
 .definelabel halfOf32Bit,0x1FFFFFFF
 LUI T0 hi(halfOf32Bit)
 ADDIU T0 T0 lo(halfOf32Bit)
