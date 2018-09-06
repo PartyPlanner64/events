@@ -1,5 +1,5 @@
-; NAME: Give Current Player Coins
-; GAMES: MP3_USA,MP1_USA,MP2_USA
+; NAME: Adjust Current Player Coins
+; GAMES: MP1_USA,MP2_USA,MP3_USA
 ; EXECUTION: Direct
 ; PARAM: Number|coins
 
@@ -21,7 +21,7 @@ JAL ShowPlayerCoinChange
 ADDIU A1 R0 coins
 
 ; Sleep for 30 frames to let coin change take effect
-JAL SleepProcess 
+JAL SleepProcess
 ADDIU A0 R0 30
 
 LW RA 0(SP)
