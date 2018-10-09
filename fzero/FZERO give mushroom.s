@@ -91,6 +91,26 @@ NOP
 JAL 0x800EC6EC
 NOP
 
+
+; 0x00 = Mushroom
+; 0x01 = Skeleton Key
+; 0x02 = Poison Mushroom
+; 0x03 = Reverse Mushroom
+; 0x04 = Cellular Shopper
+; 0x05 = Warp Block
+; 0x06 = Plunder Chest
+; 0x07 = Bowser Phone
+; 0x08 = Dueling Glove
+; 0x09 = Lucky Lamp
+; 0x0A = Golden Mushroom
+; 0x0B = Boo Bell
+; 0x0C = Boo Repellant
+; 0x0D = Bowser Suit
+; 0x0E = Magic Lamp
+; 0x0F = Koopa Card
+; 0x10 = Barter Box
+; 0x11 = Lucky Coin
+; 0x12 = Wacky Watch
 ADDIU S2 R0 0x0A ; Golden Mushroom value
 SB S2 0(S1)
 
