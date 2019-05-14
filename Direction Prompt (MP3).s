@@ -18,6 +18,7 @@ SW S0 28(SP)
 JAL PlaySound
 LI A0 345 ; "Ho ho ho!"
 
+display_message:
 SW R0 16(SP) ; A4
 SW R0 20(SP) ; A5
 SW R0 24(SP) ; A6
@@ -51,6 +52,9 @@ NOP
 LI A0 1
 BEQ S0 A0 go_right
 NOP
+LI A0 2
+BEQ S0 A0 view_map
+NOP
 ; Should never reach right here. If so, fall into go_left.
 
 go_left:
@@ -67,6 +71,14 @@ LI A0 -1
 LI A1 right_choice_chain_index
 LI A2 right_choice_chain_space_index
 JAL SetNextChainAndSpace
+NOP
+J exit
+NOP
+
+view_map:
+JAL ViewBoardMap
+NOP
+J display_message
 NOP
 
 exit:
@@ -104,5 +116,10 @@ promptMessage:
 .byte 0x1A,0x1A,0x1A,0x1A,0x1A,0x1A 
 .byte 0x0C ; Start option
 .ascii "Right"
+.byte 0x0D ; End option
+.byte 0x0A ; Newline
+.byte 0x1A,0x1A,0x1A,0x1A,0x1A,0x1A 
+.byte 0x0C ; Start option
+.ascii "View Map"
 .byte 0x0D ; End option
 .byte 0
