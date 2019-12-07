@@ -1,5 +1,5 @@
 ; This uses the main background on odd turns
-; and the additional background on event turns.
+; and the additional background on even turns.
 ADDIU SP SP -4
 SW RA 0(SP)
 
