@@ -43,10 +43,13 @@ struct player {
 
     u8 flags2; // 23
     u8 items[3]; // 24
-    u8 turn_color_status; // 27
+    u8 bowser_suit_flag; // 27
+    u8 turn_color_status; // 28
 
-    s8 pad1[12]; // 28 - 40
+    s8 pad1[7]; // 29 - 35
 
+    void *obj; // struct object *
+    s8 pad2[1]; // 40
     s16 minigame_star; // 41
     s16 coin_star; // 42
     s8 happening_space_count;
@@ -59,7 +62,7 @@ struct player {
     s8 bank_space_count; // 50
     s8 game_guy_space_count; // 51
 
-    s8 pad2[5];
+    s8 pad3[5];
 }; // sizeof == 56
 
 extern s16 GetCurrentPlayerIndex();
