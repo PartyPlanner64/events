@@ -9,14 +9,7 @@
 #define TOAD_PICTURE 3
 #define MAX_STARS 99
 
-typedef signed char            s8;
-typedef unsigned char          u8;
-typedef signed short int       s16;
-typedef unsigned short int     u16;
-typedef signed int             s32;
-typedef unsigned int           u32;
-typedef float  f32;
-typedef double f64;
+#include "ultra64.h"
 
 struct player {
     s8 unk0;

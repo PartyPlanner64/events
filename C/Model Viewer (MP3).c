@@ -5,16 +5,7 @@
 
 // This code demonstrates some 3d model object APIs.
 
-#define NULL (void *)0
-
-typedef signed char            s8;
-typedef unsigned char          u8;
-typedef signed short int       s16;
-typedef unsigned short int     u16;
-typedef signed int             s32;
-typedef unsigned int           u32;
-typedef float  f32;
-typedef double f64;
+#include "ultra64.h"
 
 struct coords3d {
     f32 x;
@@ -63,23 +54,23 @@ void main() {
     for (int model_index = 0; model_index <= 78; model_index++) {
         sprintf(msg, "%d\xFF", model_index);
         ShowMessage(-1, msg, 0, 0, 0, 0, 0);
-		func_800EC9DC();
+        func_800EC9DC();
         CloseMessage();
         func_800EC6EC();
-        
+
         // Obtain reference to the model.
         model_obj = func_800D90C8(model_index, NULL);
-        
+
         model_obj->unka |= 4; // ?
-    
+
         // This makes the model visible (maybe?)
         func_800ECC54(model_obj);
-        
+
         // Move the model to the space's coordinates.
         func_80089A20(&model_obj->coords, &model_space_data->coords);
 
         SleepProcess(30); // 1 second pause
-        
+
         // Clean up the model
         func_800D9B54(model_obj);
     }

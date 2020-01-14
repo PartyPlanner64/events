@@ -2,14 +2,7 @@
 // GAMES: MP3_USA
 // EXECUTION: Direct
 
-typedef signed char            s8;
-typedef unsigned char          u8;
-typedef signed short int       s16;
-typedef unsigned short int     u16;
-typedef signed int             s32;
-typedef unsigned int           u32;
-typedef float  f32;
-typedef double f64;
+#include "ultra64.h"
 
 enum item {
     ITEM_NONE = 0xFF,
@@ -65,7 +58,7 @@ struct player {
     u8 reverse_space_index; // 22
 
     u8 flags2; // 23
-    enum item items[3]; // 24
+    u8 items[3]; // 24
     u8 bowser_suit_flag; // 27
     u8 turn_color_status; // 28
 

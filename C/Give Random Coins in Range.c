@@ -5,16 +5,16 @@
 
 // Gives the current player 
 void main() {
-	int numCoins = guRandom() % MAX_COINS;
+    int numCoins = GetRandomByte() % MAX_COINS;
     if (numCoins == 0) {
         numCoins = 1; // Give at least one.
     }
-    
+
     int currentPlayerIndex = GetCurrentPlayerIndex();
-    
+
     AdjustPlayerCoinsGradual(currentPlayerIndex, numCoins);
     ShowPlayerCoinChange(currentPlayerIndex, numCoins);
-    
+
     // Sleep for 30 frames to let the coin change take effect.
     SleepProcess(30);
 }

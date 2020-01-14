@@ -58,13 +58,13 @@ struct ai_node ai_random_choice[] = {
 
 
 void main() {
-	PlaySound(345); // "Ho ho ho!"
-    
+    PlaySound(345); // "Ho ho ho!"
+
     int directionChosen = 0;
-    
+
     while (!directionChosen) {
         ShowMessage(0x16, promptMessage, 0, 0, 0, 0, 0);
-    
+
         // Get the selection, either from the player or CPU.
         // If A0 is a pointer to AI data, AI is ran to pick
         // for CPUs.
@@ -73,7 +73,7 @@ void main() {
         // If A0 is 2, then the value of A1 is the CPUs
         // choice (an index value).
         int dir = GetBasicPromptSelection(ai_random_choice, 0);
-    
+
         // Obligatory message box closing/cleanup calls.
         func_800EC6C8();
         func_800EC6EC();
