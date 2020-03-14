@@ -63,7 +63,7 @@ void main() {
 
         model_obj->unka |= 4; // ?
 
-        // This makes the model visible (maybe?)
+        // This causes the model to face directly towards the screen.
         func_800ECC54(model_obj);
 
         // Move the model to the space's coordinates.
