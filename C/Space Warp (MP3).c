@@ -153,4 +153,5 @@ void main() {
     SleepProcess(31);
 
     ShowMessage(-1, message, 0, 0, 0, 0, 0);
+    CloseMessage();
 }
