@@ -58,7 +58,7 @@ struct player {
     // s8 pad2[3];
 }; // sizeof == 56
 
-extern struct player *GetPlayerStruct(s32 player_index);
+extern void AdjustPlayerCoins(s32 player_index, s32 count);
 
 void main() {
     int i, min;
@@ -85,7 +85,7 @@ void main() {
     // Take away coins from the top placing player(s).
     for (i = 0; i < 4; i++) {
         if (placementsOfPlayers[i] == min) {
-            GetPlayerStruct(i)->coins -= NUM_COINS;
+            AdjustPlayerCoins(i, -NUM_COINS);
         }
     }
 }
